@@ -1,0 +1,10 @@
+
+lambda.zip
+
+build.log
+
+node_modules/
+landing/public/
+mgfe/build/
+/deployment/**
+jslib

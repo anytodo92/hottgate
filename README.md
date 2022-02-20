@@ -15,7 +15,7 @@ bucket: hottgate-static.joy
 
 ## CodeCommit
 
-grc: codecommit::eu-central-1://metagate
+grc: codecommit::eu-central-1://hottgate
 
 ## Auth0
 

@@ -1,0 +1,11 @@
+{{ define "body_classes" }}list{{ end }}
+
+{{ define "content" }}
+  <ul class="listing-posts">
+    {{ $paginator := .Paginate (.Pages) }}
+    {{ range $paginator.Pages }}
+        {{ partial "summary" . }}
+    {{ end }}
+  </ul>
+  {{ template "_internal/pagination.html" . }}
+{{- end }}

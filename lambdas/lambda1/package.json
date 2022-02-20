@@ -1,0 +1,27 @@
+{
+  "name": "lambda1",
+  "version": "1.0.0",
+  "description": "Main lambda for Metagate",
+  "main": "index.js",
+  "author": "@tahyonline",
+  "license": "UNLICENSED",
+  "scripts": {
+    "watch": "lambda-local -l index.js -h handler --watch 8001",
+    "test": "lambda-local --timeout 300 --lambda-path index.js --event-path event.json",
+    "bundle": "rm -f lambda.zip ; zip lambda.zip -r *.js *.json node_modules/ auth/ config/ controllers/ database/ models/ util/ validation/"
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.33.0",
+    "agora-access-token": "^2.0.4",
+    "auth0": "^2.36.2",
+    "aws-sdk": "^2.994.0",
+    "axios": "^0.21.4",
+    "crypto": "^1.0.1",
+    "lambda-local": "^2.0.1",
+    "moment": "^2.29.1",
+    "neo4j-driver": "^4.4.2",
+    "uuid": "^8.3.2",
+    "web3": "^1.7.0",
+    "yup": "^0.32.9"
+  }
+}

@@ -1,0 +1,10 @@
+{
+    "type": "TOKEN",
+    "requestContext": {
+        "authorizer": {
+            "principalId": "auth0|61fe069a2951c500684e5537"
+        }
+    },
+    "methodArn": "arn:aws:execute-api:eu-central-1:665955436041:88hf7gohge/l1",
+    "queryStringParameters": ["code"]
+}

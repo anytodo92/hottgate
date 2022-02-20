@@ -1,0 +1,33 @@
+<header class="site-header">
+    <div class="inner">
+        {{- if .IsHome }}
+        <h1 class="site-title slide-horizontal-invert">
+            {{ partial "site-title.html" . }}
+        </h1>
+        {{- else }}
+        <p class="site-title slide-horizontal-invert">
+            {{ partial "site-title.html" . }}
+        </p>
+        {{- end }}
+    
+        <input type="checkbox" id="check-menu" class="check-menu" hidden="">
+        <label for="check-menu" class="nav-btn hide-desktop" aria-label="Open/close menu"><span class="lines"></span></label>
+        <nav class="site-nav hide-mobile slide-horizontal">
+
+            {{ partial "dark-mode-toggle.html" . }}
+
+            <ul class="site-menu">
+                {{ $currentPage := . }}
+                {{ range .Site.Menus.main }}
+                    {{ $menu_item_url := .URL | relLangURL }}
+                    {{ $page_url:= $currentPage.RelPermalink | relLangURL }}
+                    <li{{ if eq $menu_item_url $page_url }} class="active"{{ end }}>
+                        <a href="{{ .URL }}"{{ if eq $menu_item_url $page_url }} aria-current="page"{{ end }}>
+                            <span>{{ .Name }}</span>
+                        </a>
+                    </li>
+                {{ end }}
+            </ul>
+        </nav>
+    </div>
+</header>

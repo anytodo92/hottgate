@@ -1,0 +1,7 @@
+Getting Account id 
+aws sts get-caller-identity --query "Account" --output text
+
+
+aws iam create-role --role-name role-for-test --assume-role-policy-document '{"Version": "2012-10-17","Statement": [{ "Effect": "Allow", "Principal": {"Service": "lambda.amazonaws.com"}, "Action": "sts:AssumeRole"}]}'
+aws iam create-role --role-name Test-Role --assume-role-policy-document file://Test-Role-Trust-Policy.json
+aws apigatewayv2 create-api --name api-for-test --protocol HTTP --target arn:aws:lambda:eu-west-1:123456789012:function:my_function

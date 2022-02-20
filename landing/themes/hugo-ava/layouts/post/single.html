@@ -1,0 +1,10 @@
+{{ define "body_classes" }}single{{ end }}
+
+{{- define "subheader" }}
+  {{ $date := partial "date.html" . }}
+  {{ partial "subheader.html" (dict "context" . "date" $date "site" $.Site) }}
+{{- end }}
+
+{{- define "content" }}
+  {{ .Content }}
+{{- end }}
